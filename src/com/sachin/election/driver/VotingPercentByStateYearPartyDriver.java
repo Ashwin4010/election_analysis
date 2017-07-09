@@ -7,17 +7,17 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-import com.sachin.election.mapper.AssemblyStateYearPartyWiseVotesMapper;
-import com.sachin.election.reducer.AssemblyStateYearPartyWiseVotesReducer;
+import com.sachin.election.mapper.VotingPercentByStateYearPartyMapper;
+import com.sachin.election.reducer.VotingPercentByStateYearPartyReducer;
 
-public class AssemblyStateYearPartyWiseVotesDriver {
+public class VotingPercentByStateYearPartyDriver {
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws Exception {          
 		 Configuration conf = new Configuration();                 
-		 Job job = new Job(conf, "AssemblyStateYearPartyWiseVotes");  
-		 job.setJarByClass( AssemblyStateYearPartyWiseVotesDriver.class);       
-		 job.setMapperClass(AssemblyStateYearPartyWiseVotesMapper.class);       
-		 job.setReducerClass( AssemblyStateYearPartyWiseVotesReducer.class);             
+		 Job job = new Job(conf, "VotingPercentByStateYearParty");  
+		 job.setJarByClass( VotingPercentByStateYearPartyDriver.class);       
+		 job.setMapperClass(VotingPercentByStateYearPartyMapper.class);       
+		 job.setReducerClass( VotingPercentByStateYearPartyReducer.class);             
 		 job.setMapOutputKeyClass( Text.class );       
 		 job.setMapOutputValueClass( Text.class );             
 		 job.setOutputKeyClass( Text.class );            
